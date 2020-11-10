@@ -1,0 +1,21 @@
+{% extends "index.twig" %}
+{% block content %}
+    <p>Marka: {{ brand }}</p>
+    <div class="model-form">
+        <label>
+            Dodaj nowy model
+            <input name="model" />
+        </label>
+        <button  data-brand="{{ brand }}" id="sendCarModel">
+            Dodaj
+        </button>
+    </div>
+    <ul>
+    {% for model in models %}
+        <li class="car-model">
+            <span>{{ model }}</span>
+            <button data-model="{{ model }}" data-brand="{{ brand }}" class="car-button">X</button>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
